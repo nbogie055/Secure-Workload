@@ -8,8 +8,6 @@
     Author: Nicholas Bogdajewicz
     Date created: 7/14/2022
     Date last modified: 7/20/2022
-    Python Version: 3.8.2
-    requests version: 2.27.0
 '''
 
 import cluster_login
