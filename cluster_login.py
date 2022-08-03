@@ -16,8 +16,8 @@ import argparse
 def cluster_login():
 
     #takes fabric argument and store the corresponding url
-    parser = argparse.ArgumentParser(description='Example: python3 port_config.py --fabric fab1 --user admin --pass \'cisco!23\' --chg CHG12345')
-    parser.add_argument("--fabric", dest="fabric", metavar='', type=str, help='Choose Fabric: fab1, fab2, fab3')
+    parser = argparse.ArgumentParser(description='Example: python3 script_name.py --fabric prod1 --user admin --pass \'cisco!23\' --chg CHG12345')
+    parser.add_argument("--fabric", dest="fabric", metavar='', type=str, help='Choose Fabric: lab, prod1, prod2')
     parser.add_argument("--host", dest="host", metavar='', type=str, help='Enter hostname')
     args = parser.parse_args()
     site = args.fabric
@@ -25,29 +25,29 @@ def cluster_login():
 
     if site == None:
         while True:
-            site = input("Input secure workload cluster (fab1, fab2, fab3): ")
-            if site.lower() == "fab1" or site.lower() == "fab2" or site.lower() == "fab3":
+            site = input("Input secure workload cluster (lab, prod1, prod2): ")
+            if site.lower() == "lab" or site.lower() == "prod1" or site.lower() == "prod2":
                 answer = input("Are you sure you want to select " + site + "? (y or n): ")
                 if answer.lower() == "y":
                     break
                 else:
                     continue
             else:
-                print("\nPlease input a valid fabric (fab1, fab2, fab3): ")
+                print("\nPlease input a valid fabric (lab, prod1, prod2): ")
                 continue
 
     while True:
-        if site.lower() == "fab1":
+        if site.lower() == "lab":
             url = ""
             TET_API_KEY = ""
             TET_SEC = ""
             break
-        elif site.lower() == "fab2":
+        elif site.lower() == "prod1":
             url = ""
             TET_API_KEY = ""
             TET_SEC = ""
             break
-        elif site.lower() == "fab3":
+        elif site.lower() == "prod2":
             url = ""
             TET_API_KEY = ""
             TET_SEC = ""
